@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BMC System</title>
+    <!-- Bootstrap core CSS     -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="./css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>    
+<script src="./js/demo.js"></script>
+
+    <!-- style for map -->
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+
+
+    </style>
+    <!-- style for map -->
+</head>
+
+
+<body>
+
+    <!--SPLASH -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" type="text/css" href="./css/splash.css">
+<div class="wrapper">
+  
+  <div id="loader-wrapper">
+  
+    <div id="loader">
+   <p>LOADING</p>
+  <div class="circ-one"></div><div class="circ-two"></div>
+</div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+  </div>
+
+  </div>
+
+<!--SPLASH -->
+
+
+    <div class="wrapper">
+
+        <!-- Sidebar Starts here -->
+        <div class="sidebar" data-color="purple" data-image="./img/sidebar-1.jpg">
+        <!-- data-color options = purple | blue | green | orange | red -->
+
+            <!-- Logo -->        
+            <div class="logo">
+            <h3>BMC System</h3>    
+            </div>
+
+        <!-- Sidebar links -->    
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard_our.html">
+                            <i class="material-icons">dashboard</i>
+                            <p>Identification</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./prediction.html">
+                            <i class="material-icons">schedule</i>
+                            <p>Prediction</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./user.html">
+                            <i class="material-icons">input</i>
+                            <p>Add Sector</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./online_reporting.html">
+                            <i class="material-icons text-gray">report</i>
+                            <p>Online Reporting</p>
+                        </a>
+                    </li>
+                    <li  >
+                        <a href="./messages.html">
+                            <i class="material-icons text-gray">message</i>
+                            <p>Messages</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./notifications.html">
+                            <i class="material-icons text-gray">notifications</i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="./reports.html">
+                            <i class="material-icons">unarchive</i>
+                            <p>Reports</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        <!-- Sidebar links -->
+        </div>
+        <!-- Sidebar Ends here -->
+
+
+
+
+
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+            <!-- Top page contents starts here -->            
+    
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                        	<!--
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="notify" style="display: none">
+                                    <i class="material-icons">notifications</i>
+                                    <span class="notification">3</span>
+                                    <p class="hidden-lg hidden-md">Notifications</p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Sindhi Society: Highly severity waterlogging detected</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Chembur colony: 0.5 meters waterlogging detected</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Vivekanand Chowk: Likely to face medium waterlogging</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown" id='logout' style="display: none">
+                                    <i class="material-icons">person</i>
+                                    <p class="hidden-lg hidden-md">Profile</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <!--
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group  is-empty">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="material-input"></span>
+                            </div>
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </form>
+                    -->
+                    </div>
+            <!-- Top page contents ends here-->            
+                </div>
+            </nav>
+
+
+
+
+            <div class="content">
+                <div class="container-fluid">
+            
+<!-- Welcome Message -->
+<!-- <h3>   Welcome, Mr. Abhijeet</h3> -->
+
+
+<!-- Info Snippets START here-->
+<div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="orange">
+                                    <i class="material-icons">alarm</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">High Severity Areas</p>
+                                    <h3 id='current_severe_count' class="title">
+                                    </h3>
+
+                                    <small>&gt; 15inches</small>
+                                    <br>
+                                    <small>areas</small>
+
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons text-danger">warning</i>
+                                        Employ water pumps
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="green">
+                                    <i class="material-icons">store</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">Tide</p>
+                                    <h3 id='last_24_rainfall' class="title"></h3>
+                                    <small>in Meter</small><p id="tide_date"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats inline-block">
+                                        <i class="material-icons">date_range</i>From WorldTides API 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="red">
+                                    <i class="material-icons">info_outline</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">Sea Level</p>
+                                    <h3 id='predicted_severe_count' class="title"></h3>
+                                    <small>Next 3-4 hours</small><p id="sea_date"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">local_offer</i> Tracked from Openweather API
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+       <!-- Info Snippets ENDS here-->             
+
+
+<!-- Map STARTS here -->
+ <div class="row">
+                        <div class="col-lg-12 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                               <div class="card-header" data-background-color="purple">
+                                    <i class="material-icons">room</i>
+                                </div>
+                              
+                                <h3 >Locations</h3>
+                                <hr>
+                                <div class="card-content">
+                                     <div id="map"></div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats" >
+                                        <i class="material-icons" data-background-color="red">room</i>
+                                        <a href="#pablo">High Severity</a>
+                                        <i class="material-icons" data-background-color="green">room</i>
+                                        <a href="#pablo">Medium Severity</a>
+                                        <i class="material-icons" data-background-color="blue">room</i>
+                                        <a href="#pablo">Low Severity</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                       
+ </div>
+<!-- Map ENDS here -->
+
+<!-- Bottom cards STARTS here-->
+                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="green">
+                                    <div class="ct-chart" id="dailySalesChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Top Current Severe areas</h4>
+                                    <p class="category">
+                                        Measure in centimetres(cm)</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> sent by Identification Module
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="orange">
+                                    <div class="ct-chart" id="emailsSubscriptionChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Tide level </h4>
+                                    <p class="category">Tide level in metres</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> sent by Worldtides.info API
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-chart" data-background-color="red">
+                                    <div class="ct-chart" id="completedTasksChart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="title">Weather Forecast</h4>
+                                    <p class="category">Identity weather condition(Temperature fluctuations)</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> sent by Open Weather API
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- Bottom cards STARTS here-->                   
+
+
+<!-- SMS Capability STARTS HERE -->
+<div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card card-nav-tabs">
+                                <div class="card-header" data-background-color="purple">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="nav-tabs-title">Notify via SMS:</span>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="active">
+                                                    <a href="#profile" data-toggle="tab">
+                                                        <i class="material-icons">message</i> SMS
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="tab-content row">
+                                        
+<div class="col-lg-3">
+    <select class="selectpicker"  id='sms_receiver'>
+      
+      <option value="9960798718">Abhijeet</option>
+      <option value="9960798718">Shripad</option>
+      <option value="3">Nitin</option>
+    </select>
+</div>    
+    
+    <div class="form-group col-lg-6" >
+     <label for="comment">Message:</label>
+     <textarea class="form-control" rows="1" id="msg"></textarea>
+    </div>
+
+<div class="form-group col-lg-2" >
+     <button type="button" rel="tooltip" title="Send SMS" class="btn btn-primary btn-simple btn-lg" id='send_sms_btn'>
+     <i class="material-icons">send</i>
+   </button>
+</div>
+<div class="form-group col-lg-1" id="feed" >
+     <i class="material-icons">done</i>
+</div>    
+                                                
+                                        
+                                            
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<!-- CHATBOT-->
+
+<div id="live-chat">
+        
+        <header class="clearfix">
+            <a href="#" class="chat-close">x</a>
+            <h4>Chatbot</h4>
+        </header>
+
+        <div class="chat">
+            <div style="display:block;overflow:hidden;width:500px;height:700;">
+<iframe height="900" width="430" scrolling="no" style="margin-top:-380px;margin-bottom:-110px;margin-left:-10px;margin-right:-30px" src="https://bot.dialogflow.com/35b95b6c-c069-43fa-8ef1-56d7c88228d1"></iframe>
+</div>
+        </div> 
+
+    </div> <!-- end live-chat -->
+
+
+
+<!--CHAT BOT-->
+
+
+
+<!-- SMS Capability ENDS HERE -->
+
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="./js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="./js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="./js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="./js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="./js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
+<!-- Material Dashboard javascript methods -->
+<script src="./js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+
+
+
+    setTimeout(function() {
+    $('.wrapper').addClass('loaded');
+    $("#logout").show();
+        $("#notify").show();
+    
+  }, 10000);
+
+
+$('#send_sms_btn').on('click',function(){
+        var msg=$('#msg').val();
+        var receiver=$('#sms_receiver').val();
+        $('#msg').val('');
+        console.log("clicked----------------------------->"+msg+receiver);
+        $('#feed').show(1000);
+        $('#feed').fadeOut(3000);
+        
+         $.ajax({
+            url:'https://adroit-listener-194413.appspot.com/requested_notification', //Reference to add_sector route in route1.js
+            dataType:'json',
+            data: {'msg':msg,'receiver':receiver},
+            success:function(result){
+                console.log("Message sent with msg=>"+msg+"To"+receiver)
+                console.log(result);
+                
+            }
+        });
+        
+    });
+
+
+
+
+//SCRIPT FOR SPLASH
+  
+
+
+
+jQuery(function(){
+
+  $(window).load(function(){
+  
+  $('.wrapper').removeClass('preload');
+  
+  });
+
+});
+//SCRIPT FOR SPLASH
+
+
+
+
+        $('#feed').hide();
+    	$("#logout").attr('title', 'Logout');
+    	$("#notify").attr('title', 'Notifications');
+    	$('#logout').on('click',function(){
+    		window.location.href="https://thebmcproject.tk/index.html";
+
+    	});
+
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>
+
+
+
+<!-- MAP CODE  STARTS HERE -->
+
+<!-- MAP CODE  ENDS HERE -->
+
+
+
+
+
+
+
+<!-- AJAX Request (via Jquery) on Top Cards STARTS HERE-->
+<script type="text/javascript">
+    
+    
+        //Tide
+
+
+       
+
+
+
+
+
+
+
+
+        //Tide
+        
+        //Dropdown for SMS
+        
+
+
+        //Sample AJAX CALL
+        var data1={'title':'awesomeness'};
+       
+/*
+        $.ajax({
+            //type:'POST',
+            //async:true,
+            url:link+'getclientdata', //Reference to 
+            dataType:'json',
+             //contentType: 'application/json',
+            data: {'title':'awesomeness'},
+            success:function(result){
+                console.log("done sending to server----------------------------------------->");
+                console.log("Parameter received is=:"+result.param);
+            }
+        });
+*/
+
+
+
+
+       
+        //MAP AJAX CALLS
+        
+
+    
+    
+
+        
+    
+    
+
+//MAP CODE------------------------------------------------------------------------------>
+  function initMap(map_current,map_latlng) {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: {lat:19.216228, lng:73.203090},
+    
+  });
+  setMarkers(map,map_current,map_latlng);
+}
+
+var beaches = [
+  ['Bondi Beach', 19.080551, 72.863239, 4],
+  ['Coogee Beach', 19.086702, 72.851084, 5],
+  ['Cronulla Beach', 19.070870, 72.855013, 3],
+  ['Manly Beach', 19.096075, 72.9039737, 2],
+  ['Maroubra Beach', 19.105603, 72.897581, 1]
+];
+
+function setMarkers(map,map_current,map_latlng) {
+ 
+ // Different images for SEVERITY
+  var low_image = {
+    url: 'https://maps.google.com/mapfiles/kml/paddle/blu-circle.png',
+  };
+  var medium_image = {
+    url: 'https://maps.google.com/mapfiles/kml/paddle/grn-circle.png',
+  };
+  var high_image = {
+    url: 'https://maps.google.com/mapfiles/kml/paddle/red-circle.png',
+  };
+  
+
+  
+  for (var i = 0; i < map_current[0].length; i++) {
+  
+  for(var j=0;j<map_latlng[0].length;j++){
+    if(map_latlng[0][j]['sector_id']===map_current[0][i]['sector_id']){
+        //console.log("SAME"+map_latlng[0][j]['sector_id']+map_current[0][i]['sector_id']);
+              
+              if(map_current[0][i]['level']>38){
+                      var marker = new google.maps.Marker({
+                      position: {lat: map_latlng[0][j]['lat'], lng:map_latlng[0][j]['lng']},
+                      map: map,
+                      title: map_current[0][i]['level'],
+                      icon:high_image,
+                      });
+
+              }
+              else if(map_current[0][i]['level']>13 && map_current[0][i]['level']<=38){
+
+                      var marker = new google.maps.Marker({
+                      position: {lat: map_latlng[0][j]['lat'], lng:map_latlng[0][j]['lng']},
+                      map: map,
+                      title: map_current[0][i]['level'],
+                      icon:medium_image,
+                      });
+
+              }
+              else if(map_current[0][i]['level']<=13){
+
+                      var marker = new google.maps.Marker({
+                      position: {lat: map_latlng[0][j]['lat'], lng:map_latlng[0][j]['lng']},
+                      map: map,
+                      title: map_current[0][i]['level'],
+                      icon:low_image,
+                      });
+
+              }
+
+
+    }
+  }
+
+  } //End of for loop
+
+
+}//End of Set marker
+    
+    
+
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZTIAWotdI_GbJceLv-_r8cPG_GtY3hJY">
+</script>
+<!-- AJAX Request (via Jquery) on Top Cards ENDS HERE-->
+
+
+<!-- Chart Code STARTS HERE-->
+<!--
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        google.charts.load('current', {'packages':['line', 'corechart']});
+        google.charts.setOnLoadCallback(drawChart);     
+
+    function drawChart() {
+        var url="https://api.openweathermap.org/data/2.5/forecast?id=1275339&APPID=58c80ff3f014aae79eb1104f9571f30b";
+  
+   $.ajax({
+     url:url,
+     type:"GET",
+     async:false,
+     dataType:"json",
+     success:function(result){
+        weather=result;
+       console.log("Data");
+       console.log(result);
+             
+     }
+   });
+
+
+      
+      //var chartDiv = document.getElementById('completedTasksChart');
+
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Month');
+      data.addColumn('number', "Average Temperature");
+      data.addColumn('number', "Average Hours of Daylight");
+
+for(var i=0;i<weather.list.length;i++){
+    data.addRows([[weather.list[i].dt_txt,weather.list[i].main.temp_min,weather.list[i].main.temp_max]]);
+}
+
+      var materialOptions = {
+        /*
+        width: 100,
+        height: 100,
+        */
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Temps'},
+          1: {axis: 'Daylight'}
+        },
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Temps: {label: 'Temps (Celsius)'},
+            Daylight: {label: 'Temp Max'}
+          }
+        }
+      };
+
+  
+
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, materialOptions);
+      }
+
+      drawMaterialChart();
+    }
+
+}); //End of ajax call
+</script>
+-->
+<!-- Chart Code ENDS HERE-->
+
+<style type="text/css">
+    @charset "utf-8";
+/* CSS Document */
+
+/* ---------- GENERAL ---------- */
+
+body {
+    background: #e9e9e9;
+    color: #9a9a9a;
+    font: 100%/1.5em "Droid Sans", sans-serif;
+    margin: 0;
+}
+
+a { text-decoration: none; }
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+h4, h5 {
+    line-height: 1.5em;
+    margin: 0;
+}
+
+hr {
+    background: #e9e9e9;
+    border: 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 1px;
+    margin: 0;
+    min-height: 1px;
+}
+
+img {
+    border: 0;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+input {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    margin: 0;
+}
+
+p { margin: 0; }
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after { clear: both; }
+
+/* ---------- LIVE-CHAT ---------- */
+
+#live-chat {
+    bottom: 0;
+    font-size: 12px;
+    right: 24px;
+    position: fixed;
+    width: 420px;
+}
+
+#live-chat header {
+    background: #293239;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    cursor: pointer;
+    padding: 16px 24px;
+}
+
+#live-chat h4:before {
+    background: #1a8a34;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 8px 0 0;
+    width: 8px;
+}
+
+#live-chat h4 {
+    font-size: 12px;
+}
+
+#live-chat h5 {
+    font-size: 10px;
+}
+
+#live-chat form {
+    padding: 24px;
+}
+
+#live-chat input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+    width: 234px;
+}
+
+.chat-message-counter {
+    background: #e62727;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    left: 0;
+    line-height: 28px;
+    margin: -15px 0 0 -15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 28px;
+}
+
+.chat-close {
+    background: #1b2126;
+    border-radius: 50%;
+    color: #fff;
+    display: block;
+    float: right;
+    font-size: 10px;
+    height: 16px;
+    line-height: 16px;
+    margin: 2px 0 0 0;
+    text-align: center;
+    width: 16px;
+}
+
+.chat {
+    background: #fff;
+}
+
+.chat-history {
+    height: 252px;
+    padding: 8px 24px;
+    overflow-y: scroll;
+}
+
+.chat-message {
+    margin: 16px 0;
+}
+
+.chat-message img {
+    border-radius: 50%;
+    float: left;
+}
+
+.chat-message-content {
+    margin-left: 56px;
+}
+
+.chat-time {
+    float: right;
+    font-size: 10px;
+}
+
+.chat-feedback {
+    font-style: italic; 
+    margin: 0 0 0 80px;
+}
+</style>
+<script type="text/javascript">
+    (function() {
+    	$('.chat').hide();
+
+    $('#live-chat header').on('click', function() {
+
+        $('.chat').slideToggle(300, 'swing');
+        $('.chat-message-counter').fadeToggle(300, 'swing');
+
+    });
+
+    $('.chat-close').on('click', function(e) {
+
+        e.preventDefault();
+        $('#live-chat').fadeOut(300);
+
+    });
+
+}) ();
+</script>
+
+
+</html>
